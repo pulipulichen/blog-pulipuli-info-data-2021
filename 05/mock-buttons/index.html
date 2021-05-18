@@ -46,7 +46,7 @@ $(function () {
     $("button").click(function () {
         // 加上事件的程式碼
         let d = new Date()
-        ga("send", "event", this.tagName, this.innerHTML + ' ' + d.getHours() + ':' + d.getMinutes());
+        ga("send", "event", this.tagName, this.innerHTML + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds());
         
         let _this = $(this)
         _this.css('background-color', 'yellow')
