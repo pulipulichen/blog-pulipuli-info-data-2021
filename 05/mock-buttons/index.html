@@ -46,6 +46,12 @@ $(function () {
     $("button").click(function () {
         // 加上事件的程式碼
         ga("send", "event", this.tagName, this.innerHTML);
+        
+        let _this = $(this)
+        _this.css('background-color', 'yellow')
+        setTimeout(() => {
+          _this.css('background-color', '')
+        }, 1000)
     });
 });
 </script>
