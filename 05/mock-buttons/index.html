@@ -45,7 +45,8 @@ $(function () {
     // 為按鈕加上事件
     $("button").click(function () {
         // 加上事件的程式碼
-        ga("send", "event", this.tagName, this.innerHTML);
+        let d = new Date()
+        ga("send", "event", this.tagName, this.innerHTML + ' ' + d.getHours() + ':' + d.getMinutes());
         
         let _this = $(this)
         _this.css('background-color', 'yellow')
