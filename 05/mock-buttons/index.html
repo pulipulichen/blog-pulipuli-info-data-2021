@@ -14,6 +14,11 @@ and open the template in the editor.
     <div style="background-color: gray; width: 1024px; height: 768px; position: fixed; top: 0; left: 0; z-index: 0">
     </div>
     
+    <button type="button" id="btn0"
+            style="position: fixed; left: 0px; top: 0px; width: 90px; height: 20px;padding: 0;line-height: 20px;">
+      全螢幕切換
+    </button>
+    
     <button type="button" id="btn1" 
             style="position: fixed; left: 628px; top: 175px; width: 90px; height: 20px;padding: 0;line-height: 20px;">
       更
@@ -54,7 +59,37 @@ $(function () {
           _this.css('background-color', '')
         }, 1000)
     });
+    
+    $("button#btn0").click(function () {
+      toggleFullScreen()
+    })
 });
+
+
+function toggleFullScreen() {
+  if (!document.fullscreenElement &&    // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) {
+      document.documentElement.msRequestFullscreen();
+    } else if (document.documentElement.mozRequestFullScreen) {
+      document.documentElement.mozRequestFullScreen();
+    } else if (document.documentElement.webkitRequestFullscreen) {
+      document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.msExitFullscreen) {
+      document.msExitFullscreen();
+    } else if (document.mozCancelFullScreen) {
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) {
+      document.webkitExitFullscreen();
+    }
+  }
+}
 </script>
   </body>
 </html>
