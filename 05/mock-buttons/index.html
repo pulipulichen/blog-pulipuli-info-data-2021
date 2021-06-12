@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
   <head>
     <title>Hello button</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <script src="script.js"></script>
   </head>
-  <body>
-    <div style="background-color: gray; width: 1024px; height: 768px; position: fixed; top: 0; left: 0; z-index: 0">
+  <body >
+    <div style="background-color: gray; width: 1024px; height: 768px; position: fixed; top: 0; left: 0; z-index: 0;"
+        draggable="true"
+        ondragenter="onDrop(event)"
+        ondragover="onDrop(event)"
+        ondragleave="onDrop(event)"
+        ondrop="onDrop(event)">
+      <!-- <img src="default.png" id="screen" /> -->
+      <img src="" id="screen" />
     </div>
     
     <button type="button" id="btn0"
-            style="position: fixed; left: 0px; top: 0px; width: 90px; height: 20px;padding: 0;line-height: 20px;">
+            style="position: fixed; left: 0px; top: 0px; width: 90px; height: 20px;padding: 0;line-height: 20px; ">
       全螢幕切換 (按F11或ESC離開全螢幕)
     </button>
     
     <button type="button" id="btn1" 
-            style="position: fixed; left: 628px; top: 175px; width: 90px; height: 20px;padding: 0;line-height: 20px;">
+            style="position: fixed; left: 628px; top: 175px; width: 90px; height: 20px;padding: 0;line-height: 20px; opacity: 0.9;">
       更
     </button>
     
     <button type="button" id="btn2" 
-            style="position: fixed; left: 755px; top: 125px; width: 90px; height: 25px;padding: 0;line-height: 20px;">
+            style="position: fixed; left: 755px; top: 125px; width: 90px; height: 25px;padding: 0;line-height: 20px; opacity: 0.9;">
       到
     </button>
     
     <button type="button" id="btn3" 
-            style="position: fixed; left: 859px; top: 125px; width: 90px; height: 25px;padding: 0;line-height: 20px;">
+            style="position: fixed; left: 859px; top: 125px; width: 90px; height: 25px;padding: 0;line-height: 20px; opacity: 0.9;">
       退
     </button>
 
