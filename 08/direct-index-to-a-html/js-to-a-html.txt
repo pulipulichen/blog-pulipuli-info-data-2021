@@ -1,0 +1,5 @@
+<script>
+if (location.pathname === "/") {
+  location.href = "/a.html"
+}
+</script>
