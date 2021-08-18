@@ -1,0 +1,5 @@
+<b:if cond='data:view.isHomepage'>
+    <script>
+      location.href = "/a.html"
+    </script>
+</b:if>
